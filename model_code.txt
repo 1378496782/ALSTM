@@ -1,0 +1,117 @@
+Found LSTM model code in ALSTM1.ipynb:
+from tensorflow.keras.layers import TimeDistributed
+# from tensorflow.keras.constraints import nonneg
+look_back = 14
+
+def trainModel(data):
+    data['f'] = data['f'].astype('float32')
+    train = data[0:look_back*5].copy()
+    trainX, trainY = create_dataset(train, look_back)
+    trainX = np.reshape(trainX, (trainX.shape[0], look_back, 2))
+    model = Sequential()
+    model.add(LSTM(64,input_shape=(trainX.shape[1], trainX.shape[2]),
+               return_sequences=True))
+    model.add(LSTM(32))
+    model.add(Dense(1))
+    model.compile(loss='mean_squared_error', optimizer='sgd')
+    model.fit(trainX, trainY, epochs=100, batch_size=16, verbose=0)
+    return model
+
+--------------------------------------------------------------------------------
+
+Found LSTM model code in ALSTM1.ipynb:
+def trainModel0(data):
+    data['f'] = data['f'].astype('float32')
+    train = data[0:look_back*5].copy()
+    trainX, trainY = create_dataset(train, look_back)
+    trainX = np.reshape(trainX, (trainX.shape[0], look_back, 2))
+    model = Sequential()
+    model.add(LSTM(64,input_shape=(trainX.shape[1], trainX.shape[2]),
+               return_sequences=True))
+    model.add(LSTM(32))
+    model.add(Dense(1))
+    model.compile(loss='mean_squared_error', optimizer='sgd')
+    history = model.fit(trainX, trainY, epochs=100, batch_size=16)
+    return model, history
+m0, history = trainModel0(ip0[['f','wday']].copy())
+
+--------------------------------------------------------------------------------
+
+Found LSTM model code in demo1.ipynb:
+from tensorflow.keras.layers import TimeDistributed
+# from tensorflow.keras.constraints import nonneg
+look_back = 14
+
+def trainModel(data):
+    data['f'] = data['f'].astype('float32')
+    train = data[0:look_back*5].copy()
+    trainX, trainY = create_dataset(train, look_back)
+    trainX = np.reshape(trainX, (trainX.shape[0], look_back, 2))
+    model = Sequential()
+    model.add(LSTM(64,input_shape=(trainX.shape[1], trainX.shape[2]),
+               return_sequences=True))
+    model.add(LSTM(32))
+    model.add(Dense(1))
+    model.compile(loss='mean_squared_error', optimizer='sgd')
+    model.fit(trainX, trainY, epochs=100, batch_size=16, verbose=0)
+    return model
+
+--------------------------------------------------------------------------------
+
+Found LSTM model code in demo1.ipynb:
+def trainModel0(data):
+    data['f'] = data['f'].astype('float32')
+    train = data[0:look_back*5].copy()
+    trainX, trainY = create_dataset(train, look_back)
+    trainX = np.reshape(trainX, (trainX.shape[0], look_back, 2))
+    model = Sequential()
+    model.add(LSTM(64,input_shape=(trainX.shape[1], trainX.shape[2]),
+               return_sequences=True))
+    model.add(LSTM(32))
+    model.add(Dense(1))
+    model.compile(loss='mean_squared_error', optimizer='sgd')
+    history = model.fit(trainX, trainY, epochs=100, batch_size=16)
+    return model, history
+m0, history = trainModel0(ip0[['f','wday']].copy())
+
+--------------------------------------------------------------------------------
+
+Found LSTM model code in 网络流量预测-LSTM.ipynb:
+from tensorflow.keras.layers import TimeDistributed
+# from tensorflow.keras.constraints import nonneg
+look_back = 14
+
+def trainModel(data):
+    data['f'] = data['f'].astype('float32')
+    train = data[0:look_back*5].copy()
+    trainX, trainY = create_dataset(train, look_back)
+    trainX = np.reshape(trainX, (trainX.shape[0], look_back, 2))
+    model = Sequential()
+    model.add(LSTM(64,input_shape=(trainX.shape[1], trainX.shape[2]),
+               return_sequences=True))
+    model.add(LSTM(32))
+    model.add(Dense(1))
+    model.compile(loss='mean_squared_error', optimizer='sgd')
+    model.fit(trainX, trainY, epochs=100, batch_size=16, verbose=0)
+    return model
+
+--------------------------------------------------------------------------------
+
+Found LSTM model code in 网络流量预测-LSTM.ipynb:
+def trainModel0(data):
+    data['f'] = data['f'].astype('float32')
+    train = data[0:look_back*5].copy()
+    trainX, trainY = create_dataset(train, look_back)
+    trainX = np.reshape(trainX, (trainX.shape[0], look_back, 2))
+    model = Sequential()
+    model.add(LSTM(64,input_shape=(trainX.shape[1], trainX.shape[2]),
+               return_sequences=True))
+    model.add(LSTM(32))
+    model.add(Dense(1))
+    model.compile(loss='mean_squared_error', optimizer='sgd')
+    history = model.fit(trainX, trainY, epochs=100, batch_size=16)
+    return model, history
+m0, history = trainModel0(ip0[['f','wday']].copy())
+
+--------------------------------------------------------------------------------
+
